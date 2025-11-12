@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* 🔥 smooth transition for dynamic padding set in Header.jsx */
+  transition: padding-top 0.25s ease;
 }
 
 code {

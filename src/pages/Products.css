@@ -1,0 +1,213 @@
+
+
+
+ @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+
+.products-page {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+}
+
+.banner {
+  text-align: center;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 60px 20px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+}
+
+.banner h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.banner p {
+  font-size: 1.1rem;
+}
+
+.section {
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #1d1c1c;
+  letter-spacing: 1px;
+}
+
+.top-sellers {
+  background: #949597;
+}
+.most-discount {
+  background: #3881c5;
+}
+.popular {
+  background: #baaadb;
+}
+.all-products {
+  background: #90a795;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.all-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-dropdown:hover {
+  border-color: #0072ff;
+}
+
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px 0 30px;
+}
+
+.filter-block h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.filter-block label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.filter-block input[type="number"] {
+  width: 80px;
+  padding: 6px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+.filters {
+  margin: 20px 0;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.filter-group h4 {
+  font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #f3f4f6;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  background: #0072ff;
+  color: white;
+  border-color: #0072ff;
+}
+
+.filter-btn.active {
+  background: #0072ff;
+  color: white;
+  border-color: #0072ff;
+  font-weight: 600;
+}
+
+.show-more {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #0072ff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.show-more:hover {
+  color: #0056cc;
+}
+
+
+/* Price Filter */
+.price-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-filter input {
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.price-filter span {
+  font-weight: bold;
+  color: #333;
+}
+
+.apply-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #0072ff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.apply-btn:hover {
+  background: #0056cc;
+}

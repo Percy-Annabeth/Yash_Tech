@@ -1,0 +1,58 @@
+.site-footer {
+
+  color: #fff;
+  padding-top: 40px;
+  position: relative;
+}
+
+.footer-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px 20px 10px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-left h2 {
+  font-size: 1.6rem;
+  margin: 0 0 8px;
+  color: aliceblue;
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right li {
+  margin-bottom: 8px;
+}
+
+.footer-right a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-right a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,151 @@
+/* src/pages/Contact.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* { font-family: "Poppins", sans-serif; }
+
+.contact-page {
+  margin-top: 40px;
+  padding-bottom: 60px;
+  animation: fadeIn 0.6s ease;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.contact-title {
+  color: #0d47a1;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-subtitle {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.contact-wrapper {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* form card */
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  max-width: 540px;
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(8, 28, 68, 0.06);
+  transition: transform 0.18s ease;
+}
+.contact-form:hover { transform: translateY(-6px); }
+
+.contact-form h2 {
+  color: #0d47a1;
+  margin-bottom: 14px;
+}
+
+/* text fields */
+.input-field input,
+.input-field textarea {
+  padding: 14px !important;
+  border-radius: 12px !important;
+}
+.input-field {
+  background: #fafafa;
+  border-radius: 12px;
+}
+.input-field:hover {
+  box-shadow: 0 0 8px rgba(13, 71, 161, 0.2);
+}
+
+/* buttons */
+.send-button, .reset-button {
+  flex: 1;
+  font-weight: 600 !important;
+  padding: 12px 0 !important;
+  border-radius: 30px !important;
+  transition: all 0.3s ease !important;
+}
+.send-button {
+  background-color: #1a73e8 !important;
+  color: white !important;
+}
+.send-button:hover {
+  background-color: #0d47a1 !important;
+  transform: translateY(-3px);
+}
+.reset-button {
+  border: 2px solid #1a73e8 !important;
+  color: #1a73e8 !important;
+}
+.reset-button:hover {
+  background-color: #e3f2fd !important;
+  transform: translateY(-3px);
+}
+
+/* aside info */
+.contact-info {
+  flex: 0 0 320px;
+  min-width: 280px;
+  max-width: 360px;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(8, 28, 68, 0.04);
+}
+.contact-info h2 { color: #0d47a1; margin-bottom: 14px; }
+
+/* reach buttons */
+.reach-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.reach-btn {
+  justify-content: flex-start;
+  font-weight: 600 !important;
+  border-radius: 30px !important;
+  padding: 10px 14px !important;
+  transition: all 0.3s ease !important;
+}
+.email-btn { background: #e3f2fd !important; color: #0d47a1 !important; }
+.email-btn:hover { background: #bbdefb !important; }
+.indiamart-btn { background: #fff3e0 !important; color: #e65100 !important; }
+.indiamart-btn:hover { background: #ffe0b2 !important; }
+.whatsapp-btn { background: #e8f5e9 !important; color: #2e7d32 !important; }
+.whatsapp-btn:hover { background: #c8e6c9 !important; }
+
+/* map card */
+.map-card {
+  margin-top: 16px;
+  background: linear-gradient(135deg, #f1f8ff, #ffffff);
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(13, 71, 161, 0.08);
+}
+.map-card p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0d47a1;
+}
+
+/* small screens */
+@media (max-width: 900px) {
+  .contact-wrapper { flex-direction: column; align-items: stretch; padding: 0 16px; }
+  .contact-info { order: 2; }
+}
+
+/* fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap");
+
+.admin-graphs {
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #1a237e;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.chart-card {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.chart-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #3949ab;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 50px;
+}

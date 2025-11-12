@@ -1,0 +1,103 @@
+/* src/pages/AuthPage.css */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  width: 360px;
+  animation: slideIn 0.6s ease;
+}
+
+.auth-box h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #0d47a1;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form input {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: #0d47a1;
+  box-shadow: 0 0 6px rgba(13, 71, 161, 0.3);
+}
+
+.auth-btn {
+  background: #0d47a1;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+.google-btn {
+  margin-top: 1rem;
+  background: #fff;
+  color: #333;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #f5f5f5;
+  transform: scale(1.03);
+}
+
+.auth-toggle {
+  margin-top: 1rem;
+  color: #0d47a1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.auth-toggle:hover {
+  color: #1565c0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
