@@ -149,3 +149,38 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.contact-form {
+  animation: fadeInUp 0.6s ease;
+}
+
+.contact-info {
+  animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+/* Improved button hover effects */
+.send-button:active,
+.reset-button:active,
+.reach-btn:active {
+  transform: translateY(-1px) !important;
+}
+
+/* Better focus states */
+.input-field input:focus,
+.input-field textarea:focus {
+  transform: translateY(-2px);
+}
+
+/* Map hover effect */
+.map-card iframe:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}

@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import { db } from "../firebase/config";
+import { CheckCircleOutline, LocalShippingOutlined, PaymentOutlined } from "@mui/icons-material";
 import {
   doc,
   getDoc,
@@ -215,6 +216,25 @@ const Checkout = () => {
           <button type="submit" className="btn-primary" disabled={placing}>
             {placing ? "Placing Order..." : "Place Order"}
           </button>
+
+          {/* Progress Steps */}
+<div className="checkout-steps">
+  <div className="step active">
+    <LocalShippingOutlined />
+    <span>Shipping</span>
+  </div>
+  <div className="step-line"></div>
+  <div className="step">
+    <PaymentOutlined />
+    <span>Payment</span>
+  </div>
+  <div className="step-line"></div>
+  <div className="step">
+    <CheckCircleOutline />
+    <span>Confirm</span>
+  </div>
+</div>
+
         </form>
 
         {/* Order Summary */}

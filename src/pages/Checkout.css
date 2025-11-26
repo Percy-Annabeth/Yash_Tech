@@ -114,3 +114,51 @@ hr {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+/* Progress Steps */
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  color: #2563eb;
+}
+
+.step svg {
+  font-size: 2rem;
+}
+
+.step span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step-line {
+  width: 100px;
+  height: 2px;
+  background: #e0e0e0;
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .checkout-steps {
+    display: none;
+  }
+}
