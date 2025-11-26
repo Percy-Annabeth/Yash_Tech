@@ -1,4 +1,3 @@
-
 /* Overlay base */
 .loading-overlay {
   display: flex;
@@ -28,27 +27,26 @@
 /* Rotating dots loader */
 .dots-loader {
   position: relative;
-  width: 150px;   /* orbit container size */
+  width: 150px;
   height: 150px;
-  animation: spin 2s linear infinite; /* rotate all dots around center */
+  animation: spin-loading 2s linear infinite;
 }
 
 .dots-loader span {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;      /* dot size */
+  width: 40px;
   height: 40px;
-  margin: -20px;    /* center the dot itself */
+  margin: -20px;
   border-radius: 50%;
   background: #206df3;
 
-  /* position dots at equal angles around center */
-  transform: rotate(calc(360deg * var(--i) / var(--total))) translateX(60px);
+  /* FIX APPLIED: explicit parentheses */
+  transform: rotate(calc((360deg * var(--i)) / var(--total))) translateX(60px);
 }
 
-/* Spin the parent container */
-@keyframes spin {
+@keyframes spin-loading {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }

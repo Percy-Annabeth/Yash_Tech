@@ -23,10 +23,10 @@
   border: 4px solid #f3f3f3;
   border-top: 4px solid #667eea;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin-product 1s linear infinite;
 }
 
-@keyframes spin {
+@keyframes spin-product {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
@@ -842,7 +842,7 @@
   .product-main {
     gap: 40px;
   }
-  
+
   .reviews-summary {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -854,15 +854,15 @@
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
+
   .product-images {
     position: static;
   }
-  
+
   .main-image {
     height: 400px;
   }
-  
+
   .similar-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
@@ -872,29 +872,29 @@
   .product-container {
     padding: 0 15px 40px;
   }
-  
+
   .reviews-section {
     padding: 30px 20px;
   }
-  
+
   .similar-products {
     padding: 30px 20px;
   }
-  
+
   .button-row {
     flex-direction: column;
   }
-  
+
   .trust-badges {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .price-main {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .specs-grid {
     grid-template-columns: 1fr;
   }
@@ -904,20 +904,20 @@
   .thumbnail-row {
     gap: 10px;
   }
-  
+
   .thumbnail {
     width: 70px;
     height: 70px;
   }
-  
+
   .current-price {
     font-size: 2rem;
   }
-  
+
   .rating-bars {
     gap: 10px;
   }
-  
+
   .similar-grid {
     grid-template-columns: 1fr;
   }

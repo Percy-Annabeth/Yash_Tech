@@ -1,12 +1,17 @@
-/* 
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-
-
+/* ===========================
+   HEADER APPBAR
+=========================== */
 .header-appbar {
   transition: box-shadow 0.08s ease, background-color 0.18s ease;
   backdrop-filter: blur(6px);
 }
 
+/* ===========================
+   HEADER TOOLBAR
+=========================== */
 .header-toolbar {
   display: flex;
   justify-content: space-between;
@@ -14,7 +19,9 @@
   transition: padding 160ms cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-
+/* ===========================
+   LOGO
+=========================== */
 .header-logo {
   color: white;
   text-decoration: none;
@@ -24,6 +31,9 @@
   transition: transform 160ms cubic-bezier(0.2, 0, 0.2, 1);
 }
 
+/* ===========================
+   NAVIGATION LINKS
+=========================== */
 .header-nav {
   display: flex;
   gap: 1rem;
@@ -46,16 +56,23 @@
   color: #fff;
 }
 
+/* ===========================
+   RIGHT SIDE SECTION
+=========================== */
 .header-right {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+/* Fallback var */
 :root {
   --appbar-height-approx: 76px;
 }
 
+/* ===========================
+   SEARCH BAR
+=========================== */
 .header-search {
   position: relative;
   margin: 0 1rem;
@@ -65,145 +82,38 @@
 
 .header-search input {
   width: 100%;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
+  padding: 8px 12px;
+  border-radius: 18px;
   outline: none;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-
-.header-search input:focus {
-  box-shadow: 0 0 6px rgba(13, 71, 161, 0.6);
-}
-
-.search-dropdown {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  right: 0;
-  background: white;
-  color: #111;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 2000;
-}
-
-.search-item {
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.search-item:hover {
-  background: #f1f1f1;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.header-appbar {
-  transition: box-shadow 0.08s ease, background-color 0.18s ease;
-  backdrop-filter: blur(6px);
-}
-
-.header-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: padding 160ms cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-.header-logo {
   color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.45rem;
-  letter-spacing: 0.2px;
-  transition: transform 160ms cubic-bezier(0.2, 0, 0.2, 1);
-}
 
-.header-nav {
-  display: flex;
-  gap: 1rem;
-  margin-left: 14px;
-  transition: transform 160ms ease;
-}
-
-.header-nav a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: background-color 140ms, color 140ms;
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #fff;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-:root {
-  --appbar-height-approx: 76px;
-}
-
-.header-search {
-  position: relative;
-  margin: 0 1rem;
-  flex: 1;
-  max-width: 280px;
-}
-
-.header-search input {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 18px; 
-  border: none;
-  outline: none;
-  font-size: 0.9rem;
-  color: #111;
   background: url("../assets/header_img_1.png") center/cover no-repeat;
-  background-size: 120%;
-  background-position: center;
+  border: 1px solid white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+
   transition: all 0.25s ease;
 }
 
-.header-search input:focus {
-  background: #fff;
-  box-shadow: 0 0 6px rgba(13, 71, 161, 0.6);
+.header-search input::placeholder {
+  color: rgba(255, 255, 255, 0.85);
 }
 
+/* Focus state */
+.header-search input:focus {
+  background: #fff;
+  color: #111;
+  border: none;
+  box-shadow: none;
+}
+
+.header-search input:focus::placeholder {
+  color: #999;
+}
+
+/* ===========================
+   SEARCH DROPDOWN
+=========================== */
 .search-dropdown {
   position: absolute;
   top: 110%;
@@ -222,242 +132,7 @@
   padding: 10px 14px;
   cursor: pointer;
   font-size: 0.92rem;
-  border-bottom: 1px solid #eee; 
-  transition: background 0.2s ease;
-}
-
-.search-item:last-child {
-  border-bottom: none;
-}
-
-.search-item:hover {
-  background: #f7f9fc;
-}
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-.search-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-}
-
-.search-bar {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 16px;
-  border: 1px solid #ddd; 
-  border-radius: 25px;
-  outline: none;
-  background: url("https://cdn-icons-png.flaticon.com/512/622/622669.png") no-repeat 12px center;
-  background-size: 20px;
-  padding-left: 45px;
-  background-color: transparent;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.search-bar::placeholder {
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.search-bar:focus {
-  background: white;
-  color: #333;
-  border: 1px solid #ccc;
-  padding-left: 16px; 
-}
-
-.search-bar:focus::placeholder {
-  color: #999; 
-}
-
-.search-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border-radius: 12px;
-  margin-top: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-height: 300px;
-  overflow-y: auto;
-  font-family: "Poppins", sans-serif;
-  z-index: 10;
-}
-
-.search-dropdown-item {
-  padding: 12px 16px;
-  font-size: 15px;
-  color: #333;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border-bottom: 1px solid #eee; 
-}
-
-.search-dropdown-item:last-child {
-  border-bottom: none;
-}
-
-.search-dropdown-item:hover {
-  background: #f9f9f9;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-.header-appbar {
-  transition: box-shadow 0.08s ease, background-color 0.18s ease;
-  backdrop-filter: blur(6px);
-}
-
-.header-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: padding 160ms cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-/* logo */
-.header-logo {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.45rem;
-  letter-spacing: 0.2px;
-  transition: transform 160ms cubic-bezier(0.2, 0, 0.2, 1);
-}
-
-/* nav links */
-.header-nav {
-  display: flex;
-  gap: 1rem;
-  margin-left: 14px;
-  transition: transform 160ms ease;
-}
-
-.header-nav a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: background-color 140ms, color 140ms;
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-  background-color: rgba(255, 255, 255, 0.06);
-  color: #fff;
-}
-
-/* right side */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* fallback approximate height var */
-:root {
-  --appbar-height-approx: 76px;
-}
-
-/* 🔹 Search Bar */
-.header-search {
-  position: relative;
-  margin: 0 1rem;
-  flex: 1;
-  max-width: 280px;
-}
-
-.header-search input {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 18px;
-  outline: none;
-  font-size: 0.9rem;
-  color: white;
-
-  /* Default: show background image + white border */
-  background: url("../assets/header_img_1.png") center/cover no-repeat;
-  border: 1px solid white;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-
-  transition: all 0.25s ease;
-}
-
-/* Placeholder white when unfocused */
-.header-search input::placeholder {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* On focus: clean white box, no border */
-.header-search input:focus {
-  background: #fff;
-  color: #111;
-  border: none;
-  box-shadow: none;
-}
-
-/* Focus placeholder turns gray */
-.header-search input:focus::placeholder {
-  color: #999;
-}
-
-/* 🔹 Dropdown */
-.search-dropdown {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  right: 0;
-  background: #fff;
-  color: #111;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  max-height: 220px;
-  overflow-y: auto;
-  z-index: 2000;
-}
-
-.search-item {
-  padding: 10px 14px;
-  cursor: pointer;
-  font-size: 0.92rem;
-  border-bottom: 1px solid #eee; /* divider */
+  border-bottom: 1px solid #eee;
   transition: background 0.2s ease;
 }
 

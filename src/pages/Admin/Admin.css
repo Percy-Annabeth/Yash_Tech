@@ -1,21 +1,100 @@
-/* General form styling */
+/* Removed invalid nested comment block – full file cleaned */
 
-/* .add-product-form { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; } .form-row { display: flex; gap: 14px; } .form-row input { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; } /* Category Section */ .category-section { margin-top: 10px; } .category-list { display: flex; flex-wrap: wrap; gap: 10px; } .category-item { display: flex; align-items: center; } .category-label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; transition: all 0.2s ease; } .category-label:hover { background: #eef6ff; border-color: #3498db; } .category-label input[type="text"] { border: none; outline: none; background: transparent; font-size: 0.9rem; } /* Card box section (Category & Specifications) */ .card-box { background: #fdfdfd; padding: 14px; border: 1px solid #eee; border-radius: 10px; margin-bottom: 12px; } .section-title { font-weight: 600; margin-bottom: 10px; display: block; } /* Buttons */ .btn-secondary { background: #bdc3c7; color: #2c3e50; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; transition: 0.3s; } .btn-secondary:hover { background: #95a5a6; color: white; } .btn-danger { background: #e74c3c; color: white; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; } .btn-danger:hover { background: #c0392b; } .full-width { width: 100%; margin-top: 10px; padding: 10px; font-size: 1rem; } */
+.admin-container {
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
 
-.admin-container { padding: 30px; font-family: "Poppins", sans-serif; background: #f5f7fa; min-height: 100vh; } .admin-title { font-size: 2rem; font-weight: 600; margin-bottom: 20px; color: #2c3e50; } /* Tabs */ .admin-tabs { display: flex; gap: 15px; margin-bottom: 20px; } .admin-tabs button { padding: 10px 18px; border-radius: 6px; border: none; background: #ecf0f1; font-weight: 500; cursor: pointer; transition: 0.3s; } .admin-tabs button.active { background: #3498db; color: white; font-weight: 600; } .admin-tabs button:hover { background: #dcdde1; } /* Content */ .admin-content { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); } /* Product Management */ .products-admin h2 { margin-bottom: 15px; font-size: 1.5rem; color: #34495e; } /* Search bar */ .search-bar { padding: 10px; border-radius: 6px; border: 1px solid #ccc; outline: none; width: 250px; margin-bottom: 15px; font-size: 14px; } /* Add product */ .add-product-form { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; } .add-product-form input, .add-product-form textarea { padding: 10px; border: 1px solid #ccc; border-radius: 6px; outline: none; font-size: 14px; width: 100%; } .add-product-form textarea { min-height: 80px; resize: vertical; } .btn-primary { background: #2ecc71; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; } .btn-primary:hover { background: #27ae60; } /* Product Table */ .product-table { width: 100%; border-collapse: collapse; margin-top: 10px; } .product-table th, .product-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; } .product-table th { background: #3498db; color: white; } .product-table tr:hover { background: #f9f9f9; } .admin-table td img { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); } .no-image { color: #888; font-size: 0.85rem; font-style: italic; }
+.admin-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
 
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
+.admin-tabs button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #ecf0f1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+.admin-tabs button.active {
+  background: #3498db;
+  color: white;
+  font-weight: 600;
+}
 
+.admin-tabs button:hover {
+  background: #dcdde1;
+}
 
+/* Content */
+.admin-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
 
+/* Product Management */
+.products-admin h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #34495e;
+}
 
+/* Search bar */
+.search-bar {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
 
+/* Add Product Form */
 .add-product-form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.add-product-form input,
+.add-product-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.add-product-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.add-product-form h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
 }
 
 .form-row {
@@ -67,9 +146,8 @@
   border-color: #3498db;
 }
 
-/* ✅ Selected state (whole button highlighted) */
 .category-input {
-  display: none; /* hide default radio/checkbox */
+  display: none;
 }
 
 .category-input:checked + .category-label {
@@ -79,7 +157,7 @@
   font-weight: 600;
 }
 
-/* Specifications Section */
+/* Specifications */
 .specifications-section {
   margin-top: 18px;
 }
@@ -117,7 +195,7 @@
   background: #c0392b;
 }
 
-/* Card box section (Category & Specifications) */
+/* Card Box */
 .card-box {
   background: #fdfdfd;
   padding: 16px;
@@ -133,19 +211,34 @@
 }
 
 /* Buttons */
-.btn-secondary {
-  background: #bdc3c7;
-  color: #2c3e50;
+.btn-primary {
+  background: #2ecc71;
+  color: white;
   border: none;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.btn-secondary:hover {
-  background: #95a5a6;
+.btn-primary:hover {
+  background: #27ae60;
+}
+
+.btn-secondary {
+  background: #f39c12;
   color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background: #e67e22;
 }
 
 .btn-danger {
@@ -165,11 +258,11 @@
 .full-width {
   width: 100%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
 }
 
-/* Product List Styling */
+/* Product List */
 .product-list {
   margin-top: 20px;
 }
@@ -192,69 +285,7 @@
   font-weight: 600;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Existing CSS remains the same */
-
-/* 🔹 Form title */
-.add-product-form h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-/* 🔹 Edit mode button */
-.btn-secondary {
-  background: #f39c12;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 0.9rem;
-}
-
-.btn-secondary:hover {
-  background: #e67e22;
-}
-
-/* 🔹 Full-width button (Save/Update) */
-.full-width {
-  width: 100%;
-  margin-top: 10px;
-  padding: 12px;
-  font-size: 1rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* OrdersAdmin.jsx related */
-
-
-
-
-
-
-/* ===== Google Fonts ===== */
+/* OrdersAdmin Section */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
@@ -272,7 +303,6 @@
   color: #222;
 }
 
-/* Table */
 .admin-orders-table {
   width: 100%;
   border-collapse: collapse;
@@ -299,19 +329,17 @@
   background: #fafafa;
 }
 
-/* Ordered Date smaller */
 .small-date {
   font-size: 0.8rem;
   color: #666;
 }
 
-/* Order Status bigger */
 .big-status {
   font-size: 1rem;
   font-weight: 600;
 }
 
-/* Status badges */
+/* Status Badges */
 .status-badge {
   padding: 6px 12px;
   border-radius: 25px;
@@ -340,7 +368,7 @@
   color: #155724;
 }
 
-/* Buttons */
+/* Status Buttons */
 .status-btn {
   padding: 8px 16px;
   border: none;
@@ -372,22 +400,7 @@
   color: #28a745;
 }
 
-
-
-
-
-
-
-
-
-
-/* UsersAdmin.jsx styles */
-
-
-
-
-
-
+/* UsersAdmin */
 .users-container {
   padding: 20px;
 }
@@ -405,7 +418,7 @@
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .admin-users-table th,
@@ -445,7 +458,7 @@
 }
 
 .user-avatar.generated {
-  background: #3b82f6; /* blue */
+  background: #3b82f6;
 }
 
 .role-badge {
@@ -457,15 +470,15 @@
 }
 
 .role-badge.admin {
-  background: #f87171; /* red-ish */
+  background: #f87171;
   color: white;
 }
 
 .role-badge.user {
-  background: #a3e635; /* green */
+  background: #a3e635;
   color: #333;
 }
 
 .admin-row {
-  background: #fff7f7; /* subtle highlight for admins */
+  background: #fff7f7;
 }
