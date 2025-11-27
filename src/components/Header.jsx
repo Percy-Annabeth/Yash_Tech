@@ -6,8 +6,6 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Avatar from "@mui/material/Avatar";
@@ -24,7 +22,6 @@ export default function Header() {
 
   const { user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   // Search State
@@ -66,10 +63,6 @@ export default function Header() {
 
   const handleLogout = async () => {
     await logout();
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   // Shrinking Header logic
@@ -132,27 +125,26 @@ export default function Header() {
         style={{ padding: `${padding}px 20px` }}
       >
         <div className="header-left">
-          <Typography
-            variant="h6"
-            component={Link}
-            to="/"
-            className="header-logo"
-            style={{
-              transform: `scale(${logoScale})`,
-              transformOrigin: "left center",
-            }}
-          >
-            Yash Technologies
-          </Typography>
+          <div className="logo-nav-wrapper">
+            <Typography
+              variant="h6"
+              component={Link}
+              to="/"
+              className="header-logo"
+              style={{
+                transform: `scale(${logoScale})`,
+                transformOrigin: "left center",
+              }}
+            >
+              Yash Technologies
+            </Typography>
 
-          <nav
-            className={`header-nav ${mobileMenuOpen ? "open" : ""}`}
-            style={{ transform: `translateY(${(1 - progress) * 8}px)` }}
-          >
-            <NavLink to="/products" onClick={() => setMobileMenuOpen(false)}>Products</NavLink>
-            <NavLink to="/about" onClick={() => setMobileMenuOpen(false)}>About</NavLink>
-            <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink>
-          </nav>
+            <nav className="header-nav">
+              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
+            </nav>
+          </div>
         </div>
 
         {/* Search Bar */}
@@ -275,16 +267,6 @@ export default function Header() {
               </Avatar>
             </IconButton>
           )}
-
-          {/* Mobile Menu Toggle */}
-          <IconButton
-            color="inherit"
-            onClick={toggleMobileMenu}
-            className="mobile-menu-toggle"
-            sx={{ display: { xs: 'flex', md: 'none' } }}
-          >
-            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-          </IconButton>
         </div>
       </Toolbar>
     </AppBar>
