@@ -1,8 +1,3 @@
-
-
-
-
-// src/components/Header.jsx
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -11,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Avatar from "@mui/material/Avatar";
@@ -18,7 +15,7 @@ import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import headerImg from "../assets/header_img_1.png";
 import { db } from "../firebase/config";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import "./Header.css";
 
 export default function Header() {
@@ -27,14 +24,15 @@ export default function Header() {
 
   const { user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // 🔹 Search State
+  // Search State
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // 🔹 Debounced Search
+  // Debounced Search
   useEffect(() => {
     const delayDebounce = setTimeout(async () => {
       if (search.trim() === "") {
@@ -44,7 +42,6 @@ export default function Header() {
 
       try {
         const productsRef = collection(db, "products");
-        // Example: match name that contains search text (simple client-side filter after fetch)
         const snapshot = await getDocs(productsRef);
         const allProducts = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -71,7 +68,11 @@ export default function Header() {
     await logout();
   };
 
-  // Shrinking Header logic (your existing code)
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  // Shrinking Header logic
   const MAX_SCROLL = 140;
   const [progress, setProgress] = useState(0);
 
@@ -145,16 +146,16 @@ export default function Header() {
           </Typography>
 
           <nav
-            className="header-nav"
+            className={`header-nav ${mobileMenuOpen ? "open" : ""}`}
             style={{ transform: `translateY(${(1 - progress) * 8}px)` }}
           >
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/products" onClick={() => setMobileMenuOpen(false)}>Products</NavLink>
+            <NavLink to="/about" onClick={() => setMobileMenuOpen(false)}>About</NavLink>
+            <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink>
           </nav>
         </div>
 
-        {/* 🔹 Search Bar */}
+        {/* Search Bar */}
         <div className="header-search">
           <input
             type="text"
@@ -162,6 +163,7 @@ export default function Header() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onFocus={() => search && setShowDropdown(true)}
+            onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
           />
           {showDropdown && results.length > 0 && (
             <div className="search-dropdown">
@@ -273,6 +275,16 @@ export default function Header() {
               </Avatar>
             </IconButton>
           )}
+
+          {/* Mobile Menu Toggle */}
+          <IconButton
+            color="inherit"
+            onClick={toggleMobileMenu}
+            className="mobile-menu-toggle"
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+          >
+            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          </IconButton>
         </div>
       </Toolbar>
     </AppBar>

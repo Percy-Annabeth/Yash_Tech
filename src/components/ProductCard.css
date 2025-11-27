@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .custom-product-card {
-  transition: all 0.3s ease !important;
+  transition: all 0.25s ease !important;
   cursor: pointer;
   border-radius: 16px !important;
   background: white !important;
@@ -27,7 +27,7 @@
   object-fit: contain !important;
   padding: 20px;
   background: #f8f9fa;
-  transition: transform 0.4s ease !important;
+  transition: transform 0.3s ease !important;
 }
 
 .custom-product-card:hover .product-card-media {
@@ -87,7 +87,7 @@
   justify-content: center;
   gap: 10px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -132,12 +132,14 @@
   min-height: 3rem;
 }
 
-/* Rating */
+/* Rating - FIXED HEIGHT for uniformity */
 .rating-section {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
+  min-height: 24px; /* Fixed height */
+  height: 24px; /* Enforce exact height */
 }
 
 .review-count {
@@ -198,7 +200,7 @@
   font-weight: 600 !important;
   border-color: #667eea !important;
   color: #667eea !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.25s ease !important;
 }
 
 .view-btn:hover {
@@ -212,7 +214,7 @@
   border-radius: 10px !important;
   font-weight: 600 !important;
   background: linear-gradient(135deg, #667eea, #764ba2) !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.25s ease !important;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
 }
 

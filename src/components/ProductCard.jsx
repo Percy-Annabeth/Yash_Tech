@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
   return (
     <motion.div
       whileHover={{ y: -8 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.25 }}
     >
       <Card className="custom-product-card">
         {/* Product Image */}
@@ -83,20 +83,18 @@ const ProductCard = ({ product }) => {
             {product.name}
           </Typography>
 
-          {/* Rating */}
-          {product.avgRating > 0 && (
-            <div className="rating-section">
-              <Rating 
-                value={product.avgRating || 0} 
-                precision={0.1} 
-                readOnly 
-                size="small"
-              />
-              <span className="review-count">
-                ({product.reviewCount || 0})
-              </span>
-            </div>
-          )}
+          {/* Rating - ALWAYS SHOWN with fixed height */}
+          <div className="rating-section">
+            <Rating 
+              value={product.avgRating || 0} 
+              precision={0.1} 
+              readOnly 
+              size="small"
+            />
+            <span className="review-count">
+              ({product.reviewCount || 0})
+            </span>
+          </div>
 
           {/* Price Section */}
           <div className="price-section-card">

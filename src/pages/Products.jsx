@@ -9,7 +9,6 @@ import "./Products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [topSellers, setTopSellers] = useState([]);
-  const [popular, setPopular] = useState([]);
   const [discounted, setDiscounted] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,9 +37,6 @@ const Products = () => {
 
         // Top sellers
         setTopSellers([...prodList].sort((a, b) => (b.sales || 0) - (a.sales || 0)).slice(0, 4));
-
-        // Most viewed
-        setPopular([...prodList].sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 4));
 
         // Most discounted
         setDiscounted(
@@ -122,13 +118,13 @@ const Products = () => {
     return filtered;
   };
 
-  // Animation variants
+  // Animation variants - FASTER
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.05  // Faster stagger
       }
     }
   };
@@ -138,7 +134,7 @@ const Products = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.3 }  // Faster animation
     }
   };
 
@@ -156,7 +152,7 @@ const Products = () => {
         className="banner"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <h1>Discover Premium HVAC Solutions</h1>
         <p>Explore our curated collection of industrial cooling equipment</p>
@@ -218,33 +214,12 @@ const Products = () => {
         </motion.div>
       </motion.section>
 
-      {/* Most Viewed */}
-      <motion.section 
-        className="section popular"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        <div className="section-header">
-          <h2>👀 Trending Now</h2>
-          <p>What our customers are viewing</p>
-        </div>
-        <motion.div className="product-grid" variants={containerVariants}>
-          {popular.map((p) => (
-            <motion.div key={p.id} variants={itemVariants}>
-              <ProductCard product={p} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.section>
-
       {/* All Products with Filters */}
       <motion.section 
         className="section all-products"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
       >
         <div className="all-header">
           <div>
@@ -282,7 +257,7 @@ const Products = () => {
           className="filters"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.2 }}
         >
           {/* Brand Filter */}
           <div className="filter-group">
@@ -305,7 +280,7 @@ const Products = () => {
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
+                      transition={{ delay: i * 0.03 }}
                     >
                       {brand}
                       {selectedBrands.includes(brand) && <span className="check-icon">✓</span>}
@@ -345,7 +320,7 @@ const Products = () => {
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
+                      transition={{ delay: i * 0.03 }}
                     >
                       {cat}
                       {selectedCategories.includes(cat) && <span className="check-icon">✓</span>}
