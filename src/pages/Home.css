@@ -9,8 +9,8 @@
 
 /* ===== HERO SECTION ===== */
 .hero-section {
-  background: linear-gradient(135deg, rgba(13, 71, 161, 0.95), rgba(25, 118, 210, 0.9)),
-              url("../assets/home_bg_img_1.jpg");
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.15), rgba(25, 118, 210, 0.15)),
+              url("http://www.bhebesi.co.za/wp-content/uploads/2018/09/Air-Conditioning-01.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
