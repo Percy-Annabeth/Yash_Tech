@@ -129,7 +129,7 @@
   box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
 }
 
-/* ===== PRODUCT GRID ===== */
+/* ===== PRODUCT GRID - ADJUST THIS for card spacing ===== */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -418,6 +418,7 @@
   }
 }
 
+/* ADJUST THIS: Mobile product card sizing */
 @media (max-width: 768px) {
   .section {
     padding: 35px 4%;
@@ -439,9 +440,10 @@
     font-size: 0.8rem;
   }
   
+  /* ADJUST THIS: 2 cards per row, compact spacing */
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px; /* Reduced gap for mobile */
   }
   
   .all-header {
@@ -479,6 +481,7 @@
   }
 }
 
+/* ADJUST THIS: Extra small screens - even more compact */
 @media (max-width: 480px) {
   .banner {
     padding: 40px 15px;
@@ -500,9 +503,10 @@
     padding: 30px 3%;
   }
 
+  /* Keep 2 cards per row but make them more compact */
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px; /* Even tighter spacing */
   }
   
   .filter-dropdown,
@@ -536,11 +540,11 @@
   }
 }
 
-/* Extra small phones */
+/* Extra small phones - maintain 2 cards per row */
 @media (max-width: 360px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .banner h1 {

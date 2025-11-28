@@ -118,23 +118,23 @@ const Products = () => {
     return filtered;
   };
 
-  // Animation variants - FASTER
+  // ADJUST THIS: Animation variants - made faster
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05  // Faster stagger
+        staggerChildren: 0.04  // Very fast stagger (was 0.05)
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3 }  // Faster animation
+      transition: { duration: 0.25 }  // Fast animation (was 0.3)
     }
   };
 
@@ -150,9 +150,9 @@ const Products = () => {
       {/* Enhanced Banner */}
       <motion.div 
         className="banner"
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.3 }}
       >
         <h1>Discover Premium HVAC Solutions</h1>
         <p>Explore our curated collection of industrial cooling equipment</p>
@@ -172,12 +172,14 @@ const Products = () => {
         </div>
       </motion.div>
 
-      {/* Top Sellers */}
+      {/* Top Sellers - ADJUST THIS: viewport.amount controls when animation starts */}
       <motion.section 
         className="section top-sellers"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }} 
+        // amount: 0.05 = starts when 5% visible (was 0.2)
+        // Lower value = earlier animation trigger
         variants={containerVariants}
       >
         <div className="section-header">
@@ -193,12 +195,12 @@ const Products = () => {
         </motion.div>
       </motion.section>
 
-      {/* Most Discounted */}
+      {/* Most Discounted - ADJUST THIS */}
       <motion.section 
         className="section most-discount"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }} // Early trigger
         variants={containerVariants}
       >
         <div className="section-header">
@@ -219,7 +221,7 @@ const Products = () => {
         className="section all-products"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="all-header">
           <div>
@@ -233,8 +235,8 @@ const Products = () => {
               <motion.button 
                 className="clear-filters-btn"
                 onClick={clearAllFilters}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 Clear All Filters
               </motion.button>
@@ -255,9 +257,9 @@ const Products = () => {
         {/* Filters Section */}
         <motion.div 
           className="filters"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.15 }}
         >
           {/* Brand Filter */}
           <div className="filter-group">
@@ -276,11 +278,11 @@ const Products = () => {
                       key={i}
                       className={`filter-btn ${selectedBrands.includes(brand) ? "active" : ""}`}
                       onClick={() => toggleBrand(brand)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, x: -20 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      initial={{ opacity: 0, x: -15 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.03 }}
+                      transition={{ delay: i * 0.02 }}
                     >
                       {brand}
                       {selectedBrands.includes(brand) && <span className="check-icon">✓</span>}
@@ -316,11 +318,11 @@ const Products = () => {
                       key={i}
                       className={`filter-btn ${selectedCategories.includes(cat) ? "active" : ""}`}
                       onClick={() => toggleCategory(cat)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, x: -20 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      initial={{ opacity: 0, x: -15 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.03 }}
+                      transition={{ delay: i * 0.02 }}
                     >
                       {cat}
                       {selectedCategories.includes(cat) && <span className="check-icon">✓</span>}
@@ -363,8 +365,8 @@ const Products = () => {
               <motion.button 
                 onClick={applyPriceFilter} 
                 className="apply-btn"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 Apply
               </motion.button>
@@ -384,7 +386,7 @@ const Products = () => {
             {getFilteredProducts().length === 0 ? (
               <motion.div 
                 className="no-products"
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
                 <div className="no-products-icon">🔍</div>
@@ -393,8 +395,8 @@ const Products = () => {
                 <motion.button 
                   className="reset-filters-btn"
                   onClick={clearAllFilters}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Reset All Filters
                 </motion.button>

@@ -12,13 +12,13 @@ import {
 import "./Home.css";
 
 const HomePage = () => {
-  // Animation variants
+  // ADJUST THIS: Change duration and viewport amount for faster/earlier animations
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.3, ease: "easeOut" } // Faster: was 0.4-0.6s
     }
   };
 
@@ -27,17 +27,17 @@ const HomePage = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.08 // Faster stagger: was 0.1-0.2s
       }
     }
   };
 
   const scaleIn = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: { 
       opacity: 1, 
       scale: 1,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.25 } // Faster: was 0.3-0.5s
     }
   };
 
@@ -45,25 +45,25 @@ const HomePage = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.4 }}
       className="home-container"
     >
-      {/* Hero Section with Parallax Effect */}
+      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-overlay">
           <motion.h1 
             className="hero-title"
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             Yash Technologies
           </motion.h1>
           <motion.p 
             className="hero-slogan"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
           >
             Precision Cooling Solutions for Industrial Excellence
           </motion.p>
@@ -71,14 +71,14 @@ const HomePage = () => {
             className="hero-subtext"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           >
             Trusted by 500+ industries across India for reliable HVAC solutions
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.25 }}
           >
             <Button
               variant="contained"
@@ -91,7 +91,6 @@ const HomePage = () => {
             </Button>
           </motion.div>
         </div>
-        {/* Animated scroll indicator */}
         <motion.div 
           className="scroll-indicator"
           animate={{ y: [0, 10, 0] }}
@@ -101,13 +100,15 @@ const HomePage = () => {
         </motion.div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section - ADJUST THIS: viewport amount controls when animation starts */}
       <motion.section 
         className="stats-section"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05 }} 
+        // amount: 0.05 = triggers when 5% visible (was 0.1-0.3)
+        // Lower value = earlier trigger
       >
         <motion.div className="stat-card" variants={scaleIn}>
           <TrendingUp className="stat-icon" />
@@ -131,13 +132,13 @@ const HomePage = () => {
         </motion.div>
       </motion.section>
 
-      {/* About Section */}
+      {/* About Section - ADJUST THIS */}
       <motion.section
         className="about-section"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05 }} // Early trigger: was 0.1-0.3
       >
         <div className="section-badge">About Us</div>
         <h2>Industry Leaders in HVAC Solutions</h2>
@@ -164,13 +165,13 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* Partnership Section */}
+      {/* Partnership Section - ADJUST THIS */}
       <motion.section
         className="partnership-section"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05 }} // Early trigger
       >
         <div className="partnership-content">
           <div className="partnership-text">
@@ -195,12 +196,12 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* Products Showcase */}
+      {/* Products Showcase - ADJUST THIS */}
       <motion.section
         className="products-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }} // Early trigger
         variants={staggerContainer}
       >
         <div className="section-badge">Our Products</div>
@@ -210,8 +211,8 @@ const HomePage = () => {
         <motion.div
           className="product-card"
           variants={fadeInUp}
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ duration: 0.3 }}
+          whileHover={{ scale: 1.005, y: -2 }} // Subtle hover on mobile
+          transition={{ duration: 0.25 }}
         >
           <div className="product-img home_bg_img_2">
             <div className="product-badge">Bestseller</div>
@@ -269,8 +270,8 @@ const HomePage = () => {
         <motion.div
           className="product-card reverse"
           variants={fadeInUp}
-          whileHover={{ scale: 1.02, y: -5 }}
-          transition={{ duration: 0.3 }}
+          whileHover={{ scale: 1.005, y: -2 }}
+          transition={{ duration: 0.25 }}
         >
           <div className="product-img home_bg_img_3">
             <div className="product-badge eco">Eco-Friendly</div>
@@ -324,20 +325,20 @@ const HomePage = () => {
         </motion.div>
       </motion.section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - ADJUST THIS */}
       <motion.section
         className="why-choose-section"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.05 }} // Early trigger
       >
         <div className="section-badge">Why Choose Us</div>
         <h2>Your Trusted HVAC Partner</h2>
         <div className="why-grid">
           <motion.div 
             className="why-card"
-            whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
+            whileHover={{ y: -6, boxShadow: "0 12px 30px rgba(0,0,0,0.1)" }}
           >
             <div className="why-icon">🏆</div>
             <h3>Premium Quality</h3>
@@ -345,7 +346,7 @@ const HomePage = () => {
           </motion.div>
           <motion.div 
             className="why-card"
-            whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
+            whileHover={{ y: -6, boxShadow: "0 12px 30px rgba(0,0,0,0.1)" }}
           >
             <div className="why-icon">💰</div>
             <h3>Best Prices</h3>
@@ -353,7 +354,7 @@ const HomePage = () => {
           </motion.div>
           <motion.div 
             className="why-card"
-            whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
+            whileHover={{ y: -6, boxShadow: "0 12px 30px rgba(0,0,0,0.1)" }}
           >
             <div className="why-icon">🚚</div>
             <h3>Fast Delivery</h3>
@@ -361,7 +362,7 @@ const HomePage = () => {
           </motion.div>
           <motion.div 
             className="why-card"
-            whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
+            whileHover={{ y: -6, boxShadow: "0 12px 30px rgba(0,0,0,0.1)" }}
           >
             <div className="why-icon">🛡️</div>
             <h3>5-Year Warranty</h3>
@@ -370,13 +371,13 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* CTA Section */}
+      {/* CTA Section - ADJUST THIS */}
       <motion.section
         className="cta-section"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.1 }} // Slightly higher for CTA
       >
         <h2>Ready to Experience Superior Cooling?</h2>
         <p>Join 500+ satisfied customers who trust Yash Technologies for their industrial HVAC needs</p>
