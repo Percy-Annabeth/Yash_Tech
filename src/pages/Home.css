@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
   color: #1a1a2e;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== HERO SECTION ===== */
@@ -21,6 +22,7 @@
   position: relative;
   margin-top: 0;
   padding-top: 80px;
+  width: 100%;
 }
 
 .hero-overlay {
@@ -29,6 +31,7 @@
   z-index: 2;
   max-width: 900px;
   padding: 0 20px;
+  width: 100%;
 }
 
 .hero-title {
@@ -94,6 +97,8 @@
   gap: 30px;
   padding: 60px 8%;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .stat-card {
@@ -169,6 +174,8 @@
 .cta-section {
   padding: 80px 8%;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about-section h2,
@@ -428,7 +435,6 @@
   margin-bottom: 30px;
 }
 
-/* ADJUST THIS: Highlight boxes - Made smaller for mobile */
 .product-highlights {
   display: flex;
   gap: 15px;
@@ -477,7 +483,6 @@
   align-items: flex-start;
 }
 
-/* ADJUST THIS: Foam specs - Made smaller for mobile */
 .foam-specs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -658,91 +663,243 @@
   }
 }
 
-/* ADJUST THIS: Mobile breakpoint - animations disabled, smaller elements */
+/* MOBILE OPTIMIZATION - Major Changes Below */
 @media (max-width: 768px) {
-  .stats-section {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 40px 5%;
+  /* Ensure no horizontal overflow */
+  .home-container {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
-  .stat-card {
-    padding: 20px 12px;
+  /* Hero Section - Mobile */
+  .hero-section {
+    height: 85vh;
+    padding-top: 70px;
+    background-attachment: scroll;
   }
 
-  .stat-icon {
-    font-size: 1.8rem !important;
+  .hero-overlay {
+    padding: 0 15px;
   }
 
-  .stat-card h3 {
+  .hero-title {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+
+  .hero-slogan {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    margin: 12px 0;
+    line-height: 1.4;
+  }
+
+  .hero-subtext {
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
+    margin: 10px 0 20px;
+  }
+
+  .hero-btn {
+    padding: 10px 28px !important;
+    font-size: 0.85rem !important;
+    margin-top: 20px !important;
+  }
+
+  .scroll-indicator {
+    bottom: 25px;
     font-size: 1.5rem;
   }
 
-  .stat-card p {
-    font-size: 0.8rem;
+  /* Stats Section - Mobile: 2x2 Grid */
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 30px 4%;
   }
 
+  .stat-card {
+    padding: 18px 10px;
+  }
+
+  .stat-icon {
+    font-size: 1.6rem !important;
+    margin-bottom: 8px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+
+  .stat-card p {
+    font-size: 0.75rem;
+  }
+
+  /* Section Paddings - Mobile */
   .about-section,
   .partnership-section,
   .products-section,
-  .why-choose-section,
-  .cta-section {
-    padding: 50px 5%;
-  }
-
-  .about-section {
-    margin: 30px 3%;
-    background-attachment: scroll;
-  }
-
-  .partnership-section,
-  .products-section,
   .why-choose-section {
+    padding: 40px 4%;
+  }
+
+  .cta-section {
+    padding: 40px 20px;
+    margin: 40px 4%;
+  }
+
+  /* Section Badges - Mobile */
+  .section-badge {
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+  }
+
+  /* Section Headings - Mobile */
+  .about-section h2,
+  .partnership-section h2,
+  .products-section h2,
+  .why-choose-section h2 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  /* About Section - Mobile */
+  .about-section {
+    margin: 30px 4%;
+    border-radius: 20px;
     background-attachment: scroll;
+  }
+
+  .about-lead {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.6;
+    margin: 20px auto 30px;
   }
 
   .about-features {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 30px;
   }
 
   .feature-item {
-    padding: 25px 20px;
+    padding: 20px 15px;
+  }
+
+  .feature-icon {
+    font-size: 2rem !important;
+    margin-bottom: 12px;
+  }
+
+  .feature-item h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .feature-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Partnership Section - Mobile */
+  .partnership-section {
+    background-attachment: scroll;
+  }
+
+  .partnership-content {
+    gap: 25px;
+  }
+
+  .partnership-text h2 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    text-align: center;
+  }
+
+  .partnership-text p {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .partnership-benefits {
+    margin: 20px 0;
+  }
+
+  .partnership-benefits li {
+    font-size: clamp(0.8rem, 3vw, 0.95rem);
+    padding: 8px 0;
+  }
+
+  .partnership-visual {
+    height: 180px;
+  }
+
+  .partner-badge {
+    font-size: 1.2rem;
+  }
+
+  /* Products Section - Mobile */
+  .products-section {
+    background-attachment: scroll;
   }
 
   .product-card {
-    margin: 40px 0;
-    padding: 20px;
+    margin: 30px 0;
+    padding: 20px 15px;
     gap: 20px;
-  }
-  
-  .product-img {
-    height: 220px;
+    border-radius: 20px;
   }
 
-  /* Smaller highlight boxes on mobile */
+  .product-img {
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  .product-badge {
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    top: 12px;
+    right: 12px;
+  }
+
+  .product-content h3 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .product-subtitle {
+    font-size: clamp(0.8rem, 3vw, 0.95rem);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* Product Highlights - Smaller on Mobile */
   .product-highlights {
-    gap: 10px;
+    gap: 8px;
     margin: 15px 0;
   }
 
   .highlight-box {
-    min-width: 70px;
-    padding: 10px 8px;
+    min-width: 60px;
+    padding: 8px 6px;
   }
 
   .highlight-number {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
   }
 
   .highlight-label {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
 
-  /* Smaller spec items on mobile */
+  /* Foam Specs - Mobile */
   .foam-specs {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
     margin: 15px 0;
   }
 
@@ -752,107 +909,167 @@
 
   .spec-item h4 {
     font-size: 0.7rem;
+    margin-bottom: 5px;
   }
 
   .spec-item p {
     font-size: 0.8rem;
   }
 
+  /* Product Features - Mobile */
   .product-features li {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
     padding: 6px 0;
+    line-height: 1.5;
   }
 
+  /* Product Actions - Mobile */
   .product-actions {
     flex-direction: column;
     gap: 10px;
+    margin-top: 20px;
   }
 
   .product-actions button {
     width: 100%;
     padding: 10px 20px !important;
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Why Choose Section - Mobile */
+  .why-choose-section {
+    background-attachment: scroll;
   }
 
   .why-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 30px;
   }
 
   .why-card {
-    padding: 30px 20px;
+    padding: 25px 18px;
   }
 
-  .cta-section {
-    margin: 40px 3%;
-    padding: 40px 25px;
+  .why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .why-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* CTA Section - Mobile */
+  .cta-section h2 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  .cta-section p {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    margin-bottom: 25px;
   }
 
   .cta-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .cta-btn {
     width: 100%;
-  }
-
-  .hero-section {
-    background-attachment: scroll;
+    padding: 10px 30px !important;
+    font-size: 0.85rem !important;
   }
 }
 
+/* Extra Small Mobile - 480px */
 @media (max-width: 480px) {
-  .stats-section {
-    grid-template-columns: 1fr;
-    padding: 30px 5%;
-    gap: 12px;
+  .hero-title {
+    font-size: 1.6rem;
   }
 
-  .stat-card {
-    padding: 18px 12px;
+  .hero-slogan {
+    font-size: 0.85rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.75rem;
   }
 
   .hero-btn {
-    padding: 12px 32px !important;
-    font-size: 0.95rem !important;
+    padding: 9px 24px !important;
+    font-size: 0.8rem !important;
   }
 
-  .about-lead {
-    font-size: 0.95rem;
+  .stats-section {
+    padding: 25px 3%;
+    gap: 10px;
   }
 
-  .partnership-visual {
-    height: 200px;
+  .stat-card {
+    padding: 15px 8px;
   }
 
-  .partner-badge {
-    font-size: 1.3rem;
+  .stat-icon {
+    font-size: 1.4rem !important;
+  }
+
+  .stat-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .stat-card p {
+    font-size: 0.7rem;
+  }
+
+  .about-section,
+  .partnership-section,
+  .products-section,
+  .why-choose-section {
+    padding: 35px 3%;
+  }
+
+  .cta-section {
+    padding: 35px 15px;
+    margin: 35px 3%;
+  }
+
+  .product-card {
+    padding: 18px 12px;
   }
 
   .product-img {
     height: 180px;
   }
 
-  .product-badge {
-    padding: 6px 12px;
-    font-size: 0.7rem;
-    top: 10px;
-    right: 10px;
-  }
-
-  /* Extra small highlight boxes */
   .highlight-box {
-    min-width: 65px;
-    padding: 8px 6px;
+    min-width: 55px;
+    padding: 7px 5px;
   }
 
   .highlight-number {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .highlight-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+  }
+
+  .partnership-visual {
+    height: 150px;
+  }
+
+  .partner-badge {
+    font-size: 1rem;
   }
 }
 
