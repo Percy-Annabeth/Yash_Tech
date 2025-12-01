@@ -3,6 +3,8 @@
 .about-page {
   font-family: "Poppins", sans-serif;
   color: #1a1a2e;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ===== HERO ===== */
@@ -26,6 +28,11 @@
   animation: pulse 15s infinite;
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
 .about-hero-content {
   position: relative;
   z-index: 2;
@@ -36,12 +43,14 @@
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  line-height: 1.2;
 }
 
 .about-hero p {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   opacity: 0.95;
   font-weight: 300;
+  line-height: 1.5;
 }
 
 /* ===== SECTION BADGE ===== */
@@ -77,6 +86,7 @@
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 40px;
+  line-height: 1.3;
 }
 
 /* ===== OVERVIEW ===== */
@@ -119,6 +129,12 @@
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .stat-number {
@@ -246,6 +262,12 @@
   border-radius: 15px;
   backdrop-filter: blur(10px);
   text-align: left;
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
 }
 
 .highlight h4 {
@@ -327,6 +349,7 @@
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .cta-buttons {
@@ -344,6 +367,7 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-family: "Poppins", sans-serif;
+  display: inline-block;
 }
 
 .cta-btn.primary {
@@ -352,55 +376,433 @@
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
+.cta-btn.primary:hover {
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
 .cta-btn.secondary {
   background: white;
   border: 2px solid #667eea;
   color: #667eea;
 }
 
-/* ===== RESPONSIVE ===== */
+.cta-btn.secondary:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* ===== RESPONSIVE - TABLET ===== */
 @media (max-width: 1024px) {
   .overview-content {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
   
   .company-stats {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .image-placeholder {
+    height: 300px;
+  }
 }
 
+/* ===== RESPONSIVE - MOBILE ===== */
 @media (max-width: 768px) {
+  .about-page {
+    max-width: 100vw;
+  }
+
+  /* Hero - Mobile */
+  .about-hero {
+    padding: 60px 5%;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    margin-bottom: 12px;
+  }
+
+  .about-hero p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+
+  /* Section Badge - Mobile */
+  .section-badge {
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+  }
+
+  /* Sections Padding - Mobile */
   .about-overview,
   .about-values,
   .about-mission,
   .about-why-choose,
   .about-cta {
-    padding: 60px 5%;
+    padding: 50px 5%;
   }
-  
-  .about-hero {
-    padding: 80px 5%;
+
+  /* Section Headings - Mobile */
+  .about-overview h2,
+  .about-values h2,
+  .about-mission h2,
+  .about-why-choose h2 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    margin-bottom: 25px;
   }
-  
+
+  /* Overview - Mobile */
+  .overview-content {
+    gap: 30px;
+    text-align: center;
+  }
+
+  .overview-text {
+    text-align: center;
+  }
+
+  .lead-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .overview-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
   .company-stats {
     grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 25px;
   }
-  
-  .values-grid,
-  .why-choose-grid {
+
+  .stat-item {
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .image-placeholder {
+    height: 250px;
+  }
+
+  .image-placeholder svg {
+    font-size: 80px !important;
+  }
+
+  /* Values - Mobile */
+  .values-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
   }
-  
+
+  .value-card {
+    padding: 30px 20px;
+  }
+
+  .value-card:hover {
+    transform: none;
+  }
+
+  .value-icon {
+    margin-bottom: 15px;
+  }
+
+  .value-icon svg {
+    font-size: 40px !important;
+  }
+
+  .value-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Mission - Mobile */
+  .about-mission {
+    padding: 40px 5%;
+    margin: 50px 5%;
+    border-radius: 20px;
+  }
+
+  .about-mission > p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
   .mission-highlights {
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
   }
-  
+
+  .highlight {
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .highlight:hover {
+    transform: none;
+  }
+
+  .highlight h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .highlight p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Why Choose - Mobile */
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .why-item {
+    padding: 30px 20px;
+  }
+
+  .why-item:hover {
+    transform: none;
+  }
+
+  .why-number {
+    font-size: 3rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  .why-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+
+  .why-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* CTA - Mobile */
+  .about-cta h2 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    margin-bottom: 15px;
+  }
+
+  .about-cta p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
   .cta-buttons {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    padding: 0 20px;
   }
-  
+
   .cta-btn {
+    padding: 12px 32px;
+    font-size: 0.95rem;
     text-align: center;
+    width: 100%;
+  }
+
+  .cta-btn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero - Small Mobile */
+  .about-hero {
+    padding: 50px 4%;
+  }
+
+  .about-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .about-hero p {
+    font-size: 0.85rem;
+  }
+
+  /* Sections - Small Mobile */
+  .about-overview,
+  .about-values,
+  .about-mission,
+  .about-why-choose,
+  .about-cta {
+    padding: 40px 4%;
+  }
+
+  .section-badge {
+    padding: 5px 14px;
+    font-size: 0.65rem;
+  }
+
+  /* Headings - Small Mobile */
+  .about-overview h2,
+  .about-values h2,
+  .about-mission h2,
+  .about-why-choose h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Overview - Small Mobile */
+  .lead-text {
+    font-size: 0.9rem;
+  }
+
+  .overview-text p {
+    font-size: 0.85rem;
+  }
+
+  .company-stats {
+    gap: 12px;
+  }
+
+  .stat-item {
+    padding: 18px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .image-placeholder {
+    height: 200px;
+  }
+
+  .image-placeholder svg {
+    font-size: 60px !important;
+  }
+
+  /* Values - Small Mobile */
+  .values-grid {
+    gap: 15px;
+  }
+
+  .value-card {
+    padding: 25px 18px;
+  }
+
+  .value-icon svg {
+    font-size: 35px !important;
+  }
+
+  .value-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Mission - Small Mobile */
+  .about-mission {
+    padding: 35px 4%;
+    margin: 40px 4%;
+  }
+
+  .about-mission > p {
+    font-size: 0.9rem;
+  }
+
+  .highlight {
+    padding: 20px 18px;
+  }
+
+  .highlight h4 {
+    font-size: 1rem;
+  }
+
+  .highlight p {
+    font-size: 0.85rem;
+  }
+
+  /* Why Choose - Small Mobile */
+  .why-item {
+    padding: 25px 18px;
+  }
+
+  .why-number {
+    font-size: 2.5rem;
+  }
+
+  .why-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .why-item p {
+    font-size: 0.85rem;
+  }
+
+  /* CTA - Small Mobile */
+  .about-cta h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-cta p {
+    font-size: 0.9rem;
+  }
+
+  .cta-btn {
+    padding: 11px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .about-hero p {
+    font-size: 0.8rem;
+  }
+
+  .about-overview h2,
+  .about-values h2,
+  .about-mission h2,
+  .about-why-choose h2 {
+    font-size: 1.2rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .image-placeholder {
+    height: 180px;
+  }
+
+  .cta-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
   }
 }
